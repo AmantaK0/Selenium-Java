@@ -1,5 +1,6 @@
 package objects;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -10,6 +11,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class ShoppingCartPage {
@@ -28,11 +31,15 @@ public class ShoppingCartPage {
 		 
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", viewElement);
 			wlLink.click();
-			
 			int i = 0;
 			
-			while(driver.findElement(By.className("toolbar-number")).isDisplayed()) {
-				
+			boolean endLoop = false;
+			
+			while(!endLoop) {
+				if(driver.findElement(By.className("toolbar-amount")).getText().equals("1 Item")) {
+					endLoop = true;
+				}
+
 				List<WebElement> numberOfItems = driver.findElements(By.cssSelector(".product-items .product-item"));
 				WebElement product = numberOfItems.get(i);
 				
@@ -56,11 +63,39 @@ public class ShoppingCartPage {
 				 
 				 
 				WebElement btn = driver.findElement(By.id("product-addtocart-button"));
+				
 				btn.click();
+				
+//				WebElement successfulMsg = driver.findElement(By.id("message-success"));
+				
+//				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//				WebElement successfulMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("message-success")));
+//				
+//				String messageTxt = successfulMsg.getText();
+//				System.out.println(messageTxt);
+//				WebElement message = driver.findElement(By.xpath("//*[@id=\"maincontent\"]/div[1]/div[2]/div/div/div"));
+//				String messageTxt = message.getText();
+//				String icon = ((JavascriptExecutor)driver).executeScript("return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');",message).toString();
+//				System.out.println(icon);
+				
+
+				
+//				WebElement successfulMsg = driver.findElement(By.xpath("//*[@id=\"maincontent\"]/div[1]/div[2]/div/div/div"));
+//				String actualMsg = successfulMsg.getText();
+				
+//				System.out.println(actualMsg);
+				
+//				if(actualMsg.contains("to your shopping cart.")) {
+//					System.out.println("Message si OK");
+//				}
+				
 				
 				//Check successful message
 		  }
+			
+			
 	}
+
 	
 	public void shoppingCartLink() {
 		WebElement shoppingCartLink = driver.findElement(By.xpath("/html/body/div[2]/header/div[2]/div[1]/a"));
@@ -72,7 +107,7 @@ public class ShoppingCartPage {
 		String expectedTitle = "Shopping Cart Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites";
 		String actualTitle = driver.getTitle();
 		
-		Assert.assertEquals(actualTitle, expectedTitle);
+//		Assert.assertEquals(actualTitle, expectedTitle);
 		
 		//Verify that the prices sum for all items is equal to Order Total price in the Summary section.
 	}

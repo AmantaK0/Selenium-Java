@@ -2,52 +2,50 @@
 <testng-results ignored="1" total="5" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-14T14:58:47 CET" name="Default suite" finished-at="2022-11-14T14:59:04 CET" duration-ms="16967">
+  <suite started-at="2022-11-16T23:57:36 CET" name="Default suite" finished-at="2022-11-16T23:58:08 CET" duration-ms="32167">
     <groups>
     </groups>
-    <test started-at="2022-11-14T14:58:47 CET" name="Default test" finished-at="2022-11-14T14:59:04 CET" duration-ms="16967">
+    <test started-at="2022-11-16T23:57:36 CET" name="Default test" finished-at="2022-11-16T23:58:08 CET" duration-ms="32167">
       <class name="testScenarios.testMethods">
-        <test-method is-config="true" signature="beforetest()[pri:0, instance:testScenarios.testMethods@5a56cdac]" started-at="2022-11-14T14:58:47 CET" name="beforetest" finished-at="2022-11-14T14:58:49 CET" duration-ms="1428" status="PASS">
+        <test-method is-config="true" signature="beforetest()[pri:0, instance:testScenarios.testMethods@5a56cdac]" started-at="2022-11-16T23:57:36 CET" name="beforetest" finished-at="2022-11-16T23:57:38 CET" duration-ms="1457" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforetest -->
-        <test-method signature="signIn()[pri:2, instance:testScenarios.testMethods@5a56cdac]" started-at="2022-11-14T14:58:49 CET" name="signIn" finished-at="2022-11-14T14:58:53 CET" duration-ms="4810" status="PASS">
+        <test-method signature="signIn()[pri:2, instance:testScenarios.testMethods@5a56cdac]" started-at="2022-11-16T23:57:38 CET" name="signIn" finished-at="2022-11-16T23:57:44 CET" duration-ms="5910" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signIn -->
-        <test-method signature="checkPageFilters()[pri:3, instance:testScenarios.testMethods@5a56cdac]" started-at="2022-11-14T14:58:53 CET" name="checkPageFilters" finished-at="2022-11-14T14:58:58 CET" duration-ms="4120" status="PASS">
+        <test-method signature="checkPageFilters()[pri:3, instance:testScenarios.testMethods@5a56cdac]" started-at="2022-11-16T23:57:44 CET" name="checkPageFilters" finished-at="2022-11-16T23:57:47 CET" duration-ms="3439" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkPageFilters -->
-        <test-method signature="wishList()[pri:4, instance:testScenarios.testMethods@5a56cdac]" started-at="2022-11-14T14:58:58 CET" name="wishList" finished-at="2022-11-14T14:59:04 CET" duration-ms="6217" status="PASS">
+        <test-method signature="wishList()[pri:4, instance:testScenarios.testMethods@5a56cdac]" started-at="2022-11-16T23:57:47 CET" name="wishList" finished-at="2022-11-16T23:57:54 CET" duration-ms="6687" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- wishList -->
-        <test-method signature="shoppingCart()[pri:5, instance:testScenarios.testMethods@5a56cdac]" started-at="2022-11-14T14:59:04 CET" name="shoppingCart" finished-at="2022-11-14T14:59:04 CET" duration-ms="240" status="FAIL">
-          <exception class="org.openqa.selenium.StaleElementReferenceException">
+        <test-method signature="shoppingCart()[pri:5, instance:testScenarios.testMethods@5a56cdac]" started-at="2022-11-16T23:57:54 CET" name="shoppingCart" finished-at="2022-11-16T23:58:08 CET" duration-ms="14531" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[stale element reference: element is not attached to the page document
+              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"#message\-success"}
   (Session info: chrome=107.0.5304.107)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.5.0', revision: 'fe167b119a'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [2725362ad55f716bf67f241c8c0af1e4, clickElement {id=025a3be5-de27-4b7b-a8a0-9af98f33e2a5}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\User\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:53142}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53142/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (2725362ad55f716bf67f241c8c0af1e4)] -> xpath: //*[@id="maincontent"]/div[3]/div[3]/div[3]/div[2]/div/div/a]
-Session ID: 2725362ad55f716bf67f241c8c0af1e4]]>
+Command: [cb92e8ef6816401d6782e748a6099ec5, findElement {using=id, value=message-success}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\User\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:60508}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60508/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: cb92e8ef6816401d6782e748a6099ec5]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#message\-success"}
   (Session info: chrome=107.0.5304.107)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.5.0', revision: 'fe167b119a'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [2725362ad55f716bf67f241c8c0af1e4, clickElement {id=025a3be5-de27-4b7b-a8a0-9af98f33e2a5}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\User\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:53142}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53142/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (2725362ad55f716bf67f241c8c0af1e4)] -> xpath: //*[@id="maincontent"]/div[3]/div[3]/div[3]/div[2]/div/div/a]
-Session ID: 2725362ad55f716bf67f241c8c0af1e4
+Command: [cb92e8ef6816401d6782e748a6099ec5, findElement {using=id, value=message-success}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\User\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:60508}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60508/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: cb92e8ef6816401d6782e748a6099ec5
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -60,15 +58,11 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-at jdk.proxy2/jdk.proxy2.$Proxy16.click(Unknown Source)
-at objects.ShoppingCartPage.addToCart(ShoppingCartPage.java:30)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+at objects.ShoppingCartPage.addToCart(ShoppingCartPage.java:69)
 at testScenarios.testMethods.shoppingCart(testMethods.java:69)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -100,11 +94,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shoppingCart -->
-        <test-method is-config="true" signature="aftertest()[pri:0, instance:testScenarios.testMethods@5a56cdac]" started-at="2022-11-14T14:59:04 CET" name="aftertest" finished-at="2022-11-14T14:59:04 CET" duration-ms="127" status="PASS">
+        <test-method is-config="true" signature="aftertest()[pri:0, instance:testScenarios.testMethods@5a56cdac]" started-at="2022-11-16T23:58:08 CET" name="aftertest" finished-at="2022-11-16T23:58:08 CET" duration-ms="117" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftertest -->

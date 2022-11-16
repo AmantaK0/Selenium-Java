@@ -1,9 +1,15 @@
 package objects;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignInPage {
 	WebDriver driver;
@@ -22,14 +28,20 @@ public class SignInPage {
 	
 	
 	public void signIn(String em, String pass) {
-		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		driver.get("https://magento.softwaretestingboard.com/");
 		
 		signIn.click();
 		
 		email.sendKeys(em); 
 		password.sendKeys(pass);
-		signInBtn.click();	
+		
+		WebElement button = driver.findElement(By.cssSelector("button#send2.action.login.primary"));
+		System.out.println(button.getText());
+		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button#send2.action.login.primary")));
+		
+		button.click();	
+		
 		//Check your username is displayed on right corner of the page.
 	}
 	

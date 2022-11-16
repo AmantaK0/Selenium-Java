@@ -67,7 +67,7 @@ public class testMethods {
 	public void shoppingCart() {
 		ShoppingCartPage shp = new ShoppingCartPage(driver);
 		shp.addToCart();
-//		shp.shoppingCartLink();
+		shp.shoppingCartLink();
 	}
 //	
 //	@Test(priority = 6) 

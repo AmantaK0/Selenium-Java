@@ -13,6 +13,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -30,8 +31,25 @@ public class WishListPage {
 	
 	
 	public void removePriceFilter() {
+			List<WebElement> numberOfItems = driver.findElements(By.cssSelector(".product-items .product-item"));
+			
+			//Check successful message (text + icon).
+			
+//			PageFiltersPage a = new PageFiltersPage(driver);
+//			a.shoppingOptions();
+//			
+//			int actLength = a.actualLength;
+			
+			int length1 = 1;
+			
 			removePrice.click();
-			//Check the items number displayed is increased.
+			
+			int length2 = numberOfItems.size();
+			
+			if(length2 > length1) {
+				System.out.println("Item number is increased.");
+			}
+			System.out.println(length2);
 	}
 	
 	public void addToWishlist() {
@@ -55,7 +73,7 @@ public class WishListPage {
 
 			WebElement wl = wishlistItems.get(i);
 				
-//					WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+					WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 //					wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".actions-secondary .towishlist")));
 					
 			 wl.click();
@@ -69,7 +87,29 @@ public class WishListPage {
 			 driver.navigate().back();
 		}
 				
-				//Click on User Profile, and check the correct number of items is displayed (My Wish List (2 items)).
+		WebElement userProfile = driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/span/button"));
+		userProfile.click();
+		
+		WebElement wishlistItemsUp = driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/div/ul/li[2]/a"));
+		String wishlistItemsTxt = wishlistItemsUp.getText();
+//		System.out.println(wishlistItemsTxt);
+		
+		WebElement otherPart = driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/div/ul/li[2]/a/span"));
+		String otherPartTxt = otherPart.getText();
+		String actualNumberOfItems = wishlistItemsTxt + " " + otherPartTxt;
+//		System.out.println(actualNumberOfItems);
+		
+		WebElement wishlistitems = driver.findElement(By.xpath("//*[@id=\"maincontent\"]/div[3]/div[3]/div[3]/div[1]"));
+		String expectedNumberOfItems = wishlistitems.getText();
+		
+//		System.out.println(expectedNumberOfItems);
+//		Assert.assertEquals(actualNumberOfItems, expectedNumberOfItems);
+//		if(expectedNumberOfItems == actualNumberOfItems) {
+//			System.out.println("They are the same");
+//		}else {
+//			System.out.println("They are not the same");
+//		}
+//		
 	}
 
 }

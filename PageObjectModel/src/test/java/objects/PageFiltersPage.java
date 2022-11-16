@@ -68,6 +68,5 @@ public class PageFiltersPage {
 			
 			Assert.assertEquals(actualLength, expectedLength);
 			
-			//For each product displayed ,check that the price matches the defined criteria.
 	}
 }
